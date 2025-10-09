@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: Decrypting the large secret
         run: |
-          chmod +x ./decrypt_gpgpass.sh
+          chmod +x decrypt_gpgpass.sh
           ./decrypt_gpgpass.sh
         env:
           CONFIG_SECRET_PASSPHRASE: ${{ secrets.CONFIG_SECRET_PASSPHRASE }}
