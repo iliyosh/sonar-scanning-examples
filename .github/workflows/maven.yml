@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Execution permissions
-        run: chmod +x decrypt_gpgpass.sh
-      - name: Decrypt large secret
-        run: ./decrypt_gpgpass.sh
+      - name: Decrypting the large secret
+        run: |
+          chmod +x ./decrypt_gpgpass.sh
+          ./decrypt_gpgpass.sh
         env:
           CONFIG_SECRET_PASSPHRASE: ${{ secrets.CONFIG_SECRET_PASSPHRASE }}
       # This command is just an example to show your secret being printed
