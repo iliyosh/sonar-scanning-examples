@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Execution permissions
+        run: chmod +x decrypt_gpgpass.sh
       - name: Decrypt large secret
         run: ./decrypt_gpgpass.sh
         env:
