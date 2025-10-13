@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - name: Decrypting the large secret
+      - name: Execution permissions
         run: chmod +x decrypt_gpgpass.sh
       - name: starting script
         run: ./decrypt_gpgpass.sh
@@ -27,7 +27,7 @@ jobs:
       # Ensure you remove any print statements of your secrets. GitHub does
       # not hide secrets that use this workaround.
       - name: Test printing your secret (Remove this step in production)
-        run: cat $HOME/secrets/test_secret.json
+        run: cat $PWD/test_secret.json
 #      - name: Set up JDK 17
 #        uses: actions/setup-java@v4
 #        with:
